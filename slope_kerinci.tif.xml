@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20240119</CreaDate><CreaTime>22245800</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files (x86)\arcgis\desktop10.8\ArcToolbox\Toolboxes\Spatial Analyst Tools.tbx\Slope" Date="20240119" Time="222458">Slope ketinggian.tif D:\UASADGM2024\DemnasSlope\slope_kerinci.tif PERCENT_RISE 1 PLANAR METER</Process></lineage></DataProperties></Esri></metadata>

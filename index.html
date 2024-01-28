@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP WEB GUNUNG API KERINCI SUMATRA BARAT</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <!-- Measure plugin -->
+    <link rel="stylesheet" href="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.css" />
+    
+    <!-- Utara Peta/ Utara Geografis Plugin-->
+    <link rel="stylesheet" href="leaflet-compass.css"/>
+    
+    <!-- Scale Bar Plugin -->
+    <link rel="stylesheet" href="L.Control.BetterScale.css"/>
+    
+    <!-- Mini Map Plugin -->
+    <link rel="stylesheet" href="Control.MiniMap.css"/>
+    
+    <!-- Zoom Panel -->
+    <link rel="stylesheet" href="L.Control.ZoomPanel.css"/>
+
+    <!-- plugin Pencarian lokasi -->
+    <link rel="stylesheet" href="src/leaflet-search.css">
+    <link rel="stylesheet" href="src/style.css">
+
+    <!-- add center Control plugin -->
+    <link rel="stylesheet" href="src/leaflet-control-topcenter.css">
+    <!-- plugin Control panning -->
+    <link rel="stylesheet" href="src/L.Control.Pan.css">
+    <!-- plugin Zoom slider -->
+    <link rel="stylesheet" href="src/L.Control.Zoomslider.css">
+    <!-- plugin cursor mous position -->
+    <link rel="stylesheet" href="src/L.Control.MousePosition.css">
+    <!-- credits plugin -->
+    <link rel="stylesheet" href="src/leaflet-control-credits.css">
+    <!-- Drawing and editing tool Plugin -->
+    <link rel="stylesheet" href="src/leaflet.draw.css"/>
+    <!-- Skala angka Plugin -->
+    <link rel="stylesheet" href="leaflet.scalefactor.min.css"/>
+    <!-- Easy Button Plugin -->
+    <link rel="stylesheet" href="src/easy-button.css"/>
+    <!-- Sidebar Plugin -->
+    <link rel="stylesheet" href="src/L.Control.Sidebar.css"/>
+    <!-- Css shapefile plugin -->
+    <link rel="stylesheet" href="src/catiline.js"/>
+
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <center><h2>MAP WEB GUNUNG API KERINCI & SEKITARNYA<mark><small> (SUMATERA BARAT) </small></mark> </h2></center>
+
+    <div id="sidebar_div">
+        <center>
+        <h2>Gunung Api Kerinci</h2>
+        <img src="gunungkerinci.jpg" alt="" width="350" height="200">
+        </center>
+        Gunung Kerinci berbentuk kerucut dengan lebar 13 km (8 mil) dan panjang 25 km (16 mil), memanjang dari utara ke selatan. 
+        Pada puncaknya di sisi timur laut terdapat kawah sedalam 600 meter (1.969 kaki) berisi air berwarna hijau. Hingga sekarang, 
+        kawah yang berukuran 400 x 120 meter ini masih berstatus aktif. Gunung Kerinci terakhir kali erupsi pada 11 Januari 2023 hingga sekarang
+    </div>
+    
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <!-- Measure plugin -->
+    <script src="https://ppete2.github.io/Leaflet.PolylineMeasure/Leaflet.PolylineMeasure.js"></script>
+
+     <!-- Utara Peta/ Utara Geografis Plugin-->
+    <script src="leaflet-compass.js"></script>
+
+    <!-- Scale Bar Plugin -->
+    <script src="L.Control.BetterScale.js"></script>
+
+    <!-- Mini Map Plugin -->
+    <script src="Control.MiniMap.js"></script>
+
+    <!-- Zoom Panel -->
+    <script src="L.Control.ZoomPanel.js"></script>
+
+    <!-- plugin pencarian -->
+    <script src="src/leaflet-search.js"></script>
+    <!-- add center control plugin -->
+    <script src="src/leaflet-control-topcenter.js"></script>
+    <!-- plugin control panning -->
+    <script src="src/L.Control.Pan.js"></script>
+    <script src="lib/leaflet-tilejson.js"></script>
+    <!-- plugin zoom slider -->
+    <script src="src/L.Control.Zoomslider.js"></script>
+    <!-- plugin mous position -->
+    <script src="src/L.Control.MousePosition.js"></script>
+    <!-- credits plugin -->
+    <script src="src/leaflet-control-credits.js"></script>
+
+    <!-- Drawing and editing tool Plugin -->
+    <script src="src/Leaflet.draw.js"></script>
+    <script src="src/Leaflet.Draw.Event.js"></script>
+    <script src="src/Toolbar.js"></script>
+    <script src="src/Tooltip.js"></script>
+    <script src="src/ext/GeometryUtil.js"></script>
+    <script src="src/ext/LatLngUtil.js"></script>
+    <script src="src/ext/LineUtil.Intersect.js"></script>
+    <script src="src/ext/Polygon.Intersect.js"></script>
+    <script src="src/ext/Polyline.Intersect.js"></script>
+    <script src="src/ext/TouchEvents.js"></script>
+    <script src="src/draw/DrawToolbar.js"></script>
+    <script src="src/draw/handler/Draw.Feature.js"></script>
+    <script src="src/draw/handler/Draw.SimpleShape.js"></script>
+    <script src="src/draw/handler/Draw.Polyline.js"></script>
+    <script src="src/draw/handler/Draw.Marker.js"></script>
+    <script src="src/draw/handler/Draw.Circle.js"></script>
+    <script src="src/draw/handler/Draw.CircleMarker.js"></script>
+    <script src="src/draw/handler/Draw.Polygon.js"></script>
+    <script src="src/draw/handler/Draw.Rectangle.js"></script>
+    <script src="src/edit/EditToolbar.js"></script>
+    <script src="src/edit/handler/EditToolbar.Edit.js"></script>
+    <script src="src/edit/handler/EditToolbar.Delete.js"></script>
+    <script src="src/Control.Draw.js"></script>
+    <script src="src/edit/handler/Edit.Poly.js"></script>
+    <script src="src/edit/handler/Edit.SimpleShape.js"></script>
+    <script src="src/edit/handler/Edit.Rectangle.js"></script>
+    <script src="src/edit/handler/Edit.Marker.js"></script>
+    <script src="src/edit/handler/Edit.CircleMarker.js"></script>
+    <script src="src/edit/handler/Edit.Circle.js"></script>
+
+    <!-- Skala angka Plugin -->
+    <script src="jquery.min.js"></script>
+    <!-- Easy Button Plugin -->
+    <script src="src/easy-button.js"></script>
+    <!-- Sidebar Plugin -->
+    <script src="src/L.Control.Sidebar.js"></script>
+    <script src="leaflet.scalefactor.min.js"></script>
+    <!-- Worldminimap or inset map Plugin -->
+   <script src="src/Control.WorldMiniMap.js"></script>
+   <!-- load gpx, kml & geojson to map leaflet plugin -->
+   <script src="src/leaflet.filelayer.js"></script>
+   <script src="src/togeojson.js"></script>
+   <!-- To load shapefile vector plugin -->
+   <script src="src/catiline.js"></script>
+   <!-- To load geotiff plugin -->
+   <script src="src/georaster.browser.bundle.min.js"></script>
+   <script src="src/chroma.js"></script>
+   <script src="src/georaster-layer-for-leaflet.min.js"></script>
+
+
+
+
+    <script src="main.js"></script>
+
+<div id="post-it" style="width:93%;height:45px; background-color: #ffffff">
+    <b>10 Lokasi yang bisa di cari:</b>
+    <i><b>01 </b>Danau Blibis</i> 
+    <i><b>02 </b>PELANGI Guest House</i> 
+    <i><b>03 </b>Kantor Kepala Desa Kebun Baru</i> 
+    <i><b>04 </b>Pintu Rimba Kerinci</i> 
+    <i><b>05 </b>Taman Nasional Kerinci Seblat</i> 
+    <i><b>06 </b>Shelter 1 Gunung Kerinci</i> 
+    <i><b>07 </b>SDN 213 Sangir</i>
+    <i><b>08 </b>Air terjun, desa air tenang</i> 
+    <i><b>09 </b>Majelis Ta'lim Istiqomah</i>
+    <i><b>10 </b>HT ARABICA COFFEE,INTERNATIONAL CAFE</i> 
+</div>
+</div>
+</body>
+</html>
